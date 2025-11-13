@@ -240,7 +240,7 @@ footer {
       url(files/lines3.svg);
     background-repeat: no-repeat;
     background-position: -50px top, /* lines1.svg - сдвинуто влево */ right top,
-      /* lines2.svg - без изменений */ left bottom; /* lines3.svg - без изменений */
+      /* lines2.svg - без изменений */ -160px bottom; /* lines3.svg - без изменений */
   }
 }
 
@@ -250,8 +250,11 @@ footer {
     background-image: url(files/lines1.svg), url(files/lines2.svg),
       url(files/lines3.svg);
     background-repeat: no-repeat;
-    background-position: -80px top, /* lines1.svg - сдвинуто влево */ right top,
-      /* lines2.svg - без изменений */ left bottom; /* lines3.svg - без изменений */
+    background-position: -80px top, right top, -250px bottom; /* Прижать к низу и сдвинуть влево */
+  }
+  .cards img:nth-child(4),
+  .cards img:last-child {
+    display: none;
   }
 }
 
@@ -259,5 +262,7 @@ footer {
 @media (max-width: 575px) {
   body {
     background-image: none, url(files/lines2.svg), url(files/lines3.svg);
+    background-repeat: no-repeat;
+    background-position: -80px top, right top, -310px bottom; /* Прижать к низу и сдвинуть влево */
   }
 }

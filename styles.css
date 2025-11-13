@@ -36,6 +36,8 @@ body {
 
 .cards img {
   transition: all 0.3s ease;
+  width: 200px; /* Фиксированная ширина */
+  height: auto; /* Сохраняет пропорции */
 }
 
 .cards img:hover {
@@ -88,7 +90,6 @@ body {
   border-radius: 50%;
   z-index: -1;
 
-  /* Акварельный размытый эффект */
   box-shadow: 0 0 120px 80px rgba(87, 229, 219, 0.3),
     0 0 250px 130px rgba(87, 229, 219, 0.2),
     0 0 400px 200px rgba(87, 229, 219, 0.1),
@@ -221,4 +222,42 @@ footer {
 
 .href-footer:hover {
   color: #4ecdc4;
+}
+
+/* Десктоп (1200px+) - базовые стили */
+
+/* Ноутбуки (1199px-) */
+@media (max-width: 1199px) {
+  article {
+    margin-top: 288px;
+  }
+}
+
+/* Планшеты (991px-) */
+@media (max-width: 991px) {
+  body {
+    background-image: url(files/lines1.svg), url(files/lines2.svg),
+      url(files/lines3.svg);
+    background-repeat: no-repeat;
+    background-position: -50px top, /* lines1.svg - сдвинуто влево */ right top,
+      /* lines2.svg - без изменений */ left bottom; /* lines3.svg - без изменений */
+  }
+}
+
+/* Телефоны (767px-) */
+@media (max-width: 767px) {
+  body {
+    background-image: url(files/lines1.svg), url(files/lines2.svg),
+      url(files/lines3.svg);
+    background-repeat: no-repeat;
+    background-position: -80px top, /* lines1.svg - сдвинуто влево */ right top,
+      /* lines2.svg - без изменений */ left bottom; /* lines3.svg - без изменений */
+  }
+}
+
+/* Маленькие телефоны (575px-) */
+@media (max-width: 575px) {
+  body {
+    background-image: none, url(files/lines2.svg), url(files/lines3.svg);
+  }
 }

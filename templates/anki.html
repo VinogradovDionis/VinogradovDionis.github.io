@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/css/anki_styles.css" />
+    <title>AnkiMaker</title>
+  </head>
+  <body>
+    <header>
+      <div class="header"><h1>Создание колоды Anki</h1></div>
+      <div class="caption"><h2>Вставьте свои слова или загрузите файл</h2></div>
+    </header>
+    <section>
+      <div class="vote">
+        <div class="method-options">
+          <label>
+            <input type="radio" name="input_method" value="text" checked />
+            Текстовый ввод
+          </label>
+          <label>
+            <input type="radio" name="input_method" value="file" />
+            Загрузка файлов
+          </label>
+        </div>
+      </div>
+
+      <!-- Контейнер для полей ввода -->
+      <div class="input-fields">
+        <!-- Добавь этот блок в anki.html перед fields-container -->
+         <div>
+          <div class="deck-name-container">
+            <label for="deck_name">Название колоды:</label>
+            <input
+              type="text"
+              id="deck_name"
+              class="deck-name-input"
+              
+              placeholder="Введите название колоды"
+            />
+          </div>
+          
+        <div class="fields-container" id="fieldsContainer">
+          <!-- Поля для текстового ввода -->
+          <div class="text-fields active" id="textFields">
+            <div class="field-group">
+              <label for="englishText"
+                >Английские слова (каждое слово с новой строки)</label
+              >
+              <textarea
+                id="englishText"
+                placeholder="apple&#10;house&#10;computer"
+              ></textarea>
+            </div>
+            <div class="field-group">
+              <label for="russianText"
+                >Русские слова (каждое слово с новой строки)</label
+              >
+              <textarea
+                id="russianText"
+                placeholder="яблоко&#10;дом&#10;компьютер"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Поля для загрузки файлов -->
+          <div class="file-fields" id="fileFields">
+            <div class="field-group">
+              <label for="englishFile">Файл с английскими словами</label>
+              <input
+                type="file"
+                id="englishFile"
+                class="file-input"
+                accept=".txt,.csv"
+              />
+            </div>
+            <div class="field-group">
+              <label for="russianFile">Файл с русскими словами</label>
+              <input
+                type="file"
+                id="russianFile"
+                class="file-input"
+                accept=".txt,.csv"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="create-button-container">
+        <button class="create-button" id="createButton">Создать колоду</button>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-top">
+        <div class="header-footer">AnkiMaker</div>
+        <div class="footer-description">
+          Студенческий проект для эффективного обучения
+        </div>
+      </div>
+
+      <div class="footer-middle">
+        <a class="href-footer" href="https://github.com/VinogradovDionis/anki"
+          >GitHub · О проекте</a
+        >
+      </div>
+
+      <div class="footer-bottom">
+        <div>® 2025 AnkiMaker</div>
+        <div>Москва</div>
+      </div>
+    </footer>
+    <script src="static/js/anki.js"></script>
+  </body>
+</html>

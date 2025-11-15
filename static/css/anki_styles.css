@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0f172a;
+  height: auto;
+  min-height: 100vh; /* Минимальная высота на весь экран */
+  display: flex;
+  flex-direction: column; /* Располагаем элементы в колонку */
+}
+
+/* Основной контент занимает все доступное пространство */
+section {
+  flex: 1; /* Растягивается на все свободное пространство */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+header {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.header {
+  display: flex;
+  color: white;
+  justify-content: center;
+  margin: 124px auto 80px;
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+.vote {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 20px;
+  color: white;
+}
+.method-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.method-options label {
+  background-color: #2a2d3a; /* цвет фона кнопок */
+  /* border: 2px solid #цвет_рамки; /* цвет рамки */
+  padding: 10px 20px; /* внутренние отступы (размер кнопок) */
+  border-radius: 8px; /* скругление углов */
+  transition: all 0.3s ease; /* плавные анимации */
+}
+.method-options input[type="radio"] {
+  margin-right: 20px; /* отступ между кружком и текстом */
+  width: 18px;
+  height: 18px;
+}
+.method-options input[type="radio"]:checked {
+  accent-color: #4ecdc4; /* цвет кружка radio */
+}
+
+/* Стили для полей ввода */
+.input-fields {
+  display: flex;
+  flex-direction: column; /* меняем на колонку */
+  align-items: center; /* центрируем по горизонтали */
+  margin-top: 30px;
+  gap: 20px; /* добавляем отступ между элементами */
+}
+
+.deck-name-container {
+  display: flex;
+  flex-direction: column; /* меняем на колонку */
+  align-items: center; /* центрируем по горизонтали */
+  gap: 10px; /* отступ между label и input */
+  margin-bottom: 16px; /* убираем нижний отступ так как теперь есть gap */
+}
+.deck-name-container label {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.deck-name-input {
+  padding: 10px 15px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  width: 300px;
+}
+
+.deck-name-input:focus {
+  outline: none;
+  border-color: #4ecdc4;
+}
+
+.fields-container {
+  display: none;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.text-fields {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.file-fields {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4ecdc4;
+}
+
+.file-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background-color: #1f2937;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.file-input::file-selector-button {
+  background-color: #4ecdc4;
+  color: #0f172a;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 12px;
+}
+
+/* Показываем активные поля */
+#textFields.active {
+  display: flex;
+}
+
+#fileFields.active {
+  display: flex;
+}
+
+.fields-container.active {
+  display: flex;
+}
+
+.create-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.create-button {
+  background-color: #4ecdc4;
+  color: #0f172a;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.create-button:hover {
+  background-color: #45b8b0;
+}
+
+footer {
+  background-color: #2a2d3a;
+  color: white;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: auto; /* Прижимаем футер к низу */
+}
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  margin-top: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.header-footer {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.href-footer {
+  text-decoration: none;
+  color: white;
+}
+
+.href-footer:hover {
+  color: #4ecdc4;
+}

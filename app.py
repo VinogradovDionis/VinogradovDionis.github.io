@@ -12,8 +12,10 @@ import re
 from typing import List, Tuple
 import json
 
-# Убери template_folder='.'
-app = Flask(__name__, static_folder='static')
+
+app = Flask(__name__, 
+            template_folder='templates', 
+            static_folder='static')
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 class WordProcessor:
@@ -311,8 +313,14 @@ def create_anki_deck_from_data(data, deck_name, temp_dir):
     
     return deck_path
 
+# Главная страница
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+# Страница создания колоды
+@app.route('/create')
+def create_deck():
     return render_template('anki.html')
 
 @app.route('/generate_deck', methods=['POST'])
